@@ -1,0 +1,44 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>740</x><y>311</y><w>210</w><h>130</h></coordinates><panel_attributes>Article
+--
+- name : String
+- observation : String
+- productionCost: int
+- salePrice: int
+- typeSale : String
+--
++ feature () : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1020</x><y>301</y><w>220</w><h>70</h></coordinates><panel_attributes>El articulo se le setea el 
+costo de produccion luego
+se busca en las listas de min o may 
+y se le setea el precio correspondiente
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1020</x><y>411</y><w>230</w><h>70</h></coordinates><panel_attributes>* La observacion no es necesaria
+* En las lista se busca mediante el atributo
+del nombre del articulo
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1020</x><y>521</y><w>380</w><h>120</h></coordinates><panel_attributes>*Se crea el articulo
+*Se le setea los datos
+*Se validan los datos del articulo
+*searchPrice es quien le indica en la lista en donde tiene que
+ir a buscar el precio
+*Se da de alta el articulo
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>531</y><w>210</w><h>100</h></coordinates><panel_attributes>PriceList
+--
+- articleName : String
+-date : String
+- price : int
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>431</y><w>80</w><h>120</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>311</y><w>590</w><h>210</h></coordinates><panel_attributes>ArticleManager
+--
+
+--
+- validateAttributes(Article article) : boolean
++ validateArticles (List&lt;Article&gt; articles) : List&lt;Article&gt; articles
+- searchMinorityPrice  ( List&lt;PriceList&gt; minorityList, Article article) : void
+- searchWholesalerPrice(List&lt;PriceList&gt; wholesalerList, Article article) : void
++  searchPrices ( List&lt;PriceList&gt; minorityList, List&lt;PriceList&gt; wholesalerList, List&lt;Article&gt; articles) : void
++feature() : String
+showArticles (List&lt;Article&gt; articles) : void
+validArticle (Article article) : boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>311</y><w>150</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element></diagram>
